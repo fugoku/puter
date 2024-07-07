@@ -25,14 +25,14 @@
     "webpack-cli": "^5.1.1"
   },
   "scripts": {
-    "test": "mocha ./packages/phoenix/test ./packages/phoenix/packages/contextlink/test",
+    "test": "mocha ./src/phoenix/test ./src/phoenix/packages/contextlink/test",
     "start=gui": "nodemon --exec \"node dev-server.js\" ",
     "start": "node run-selfhosted.js",
-    "build": "node ./build.js",
+    "build": "cd src/gui; node ./build.js",
     "check-translations": "node tools/check-translations.js"
   },
   "workspaces": [
-    "packages/*"
+    "src/*"
   ],
   "nodemonConfig": {
     "ext": "js, json, mjs, jsx, svg, css",
