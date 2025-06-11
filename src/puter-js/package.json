@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start-server": "npx http-server --cors -c-1",
-    "start-webpack": "webpack && webpack --output-filename puter.dev.js --watch --devtool source-map",
-    "start": "concurrently \"npm run start-server\" \"npm run start-webpack\"",
-    "build": "webpack && { echo \"// Copyright 2024-present Puter Technologies Inc. All rights reserved.\"; echo \"// Generated on $(date '+%Y-%m-%d %H:%M')\n\"; cat ./dist/puter.js; } > temp && mv temp ./dist/puter.js"
+    "start-server": "node init && npx http-server --cors -c-1",
+    "start-webpack": "node init && webpack && webpack --output-filename puter.dev.js --watch --devtool source-map",
+    "start": "node init && concurrently \"npm run start-server\" \"npm run start-webpack\"",
+    "build": "node init && webpack && { echo \"// Copyright 2024-present Puter Technologies Inc. All rights reserved.\"; echo \"// Generated on $(date '+%Y-%m-%d %H:%M')\n\"; cat ./dist/puter.js; } > temp && mv temp ./dist/puter.js"
   },
   "keywords": [],
   "author": "",
